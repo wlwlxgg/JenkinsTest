@@ -10,12 +10,21 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "ApiEnvironment", API_ENVIRONMENT
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    if (API_ENVIRONMENT == "pro") {
+
+    } else if (API_ENVIRONMENT == "dev") {
+
+    } else if (API_ENVIRONMENT == "local") {
+
     }
 }
 
