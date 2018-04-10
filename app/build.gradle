@@ -13,17 +13,18 @@ android {
         buildConfigField "String", "ApiEnvironment", API_ENVIRONMENT
     }
     buildTypes {
-        release {
+        pro {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    if (API_ENVIRONMENT == "pro") {
-
-    } else if (API_ENVIRONMENT == "dev") {
-
-    } else if (API_ENVIRONMENT == "local") {
-
+        dev {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        local {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
