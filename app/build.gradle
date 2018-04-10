@@ -18,20 +18,22 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "ApiEnvironment", API_ENVIRONMENT
     }
     buildTypes {
         pro {
+            buildConfigField "String", "ApiEnvironment", "pro"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
         dev {
+            buildConfigField "String", "ApiEnvironment", "dev"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }
         local {
+            buildConfigField "String", "ApiEnvironment", "local"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
