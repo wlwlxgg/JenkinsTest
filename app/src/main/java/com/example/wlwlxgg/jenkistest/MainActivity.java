@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.tv);
-        if (BuildConfig.ApiEnvironment.equals("local")) {
+        if (BuildConfig.ApiEnvironment == "local") {
             textView.setText("本地");
-        } else if (BuildConfig.ApiEnvironment.equals("pro")) {
+        } else if (BuildConfig.ApiEnvironment == "pro") {
             textView.setText("生产环境");
-        } else if (BuildConfig.ApiEnvironment.equals("dev")) {
+        } else if (BuildConfig.ApiEnvironment == "dev") {
             textView.setText("开发环境");
         }
     }
