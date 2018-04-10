@@ -14,8 +14,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = (TextView) findViewById(R.id.tv);
         String apiEvironment = BuildConfig.ApiEnvironment;
-        if (apiEvironment.equals("local")) textView.setText("本地");
-        else if (apiEvironment.equals("pro")) textView.setText("生产环境");
-        else if (apiEvironment.equals("dev")) textView.setText("开发环境");
+        if (apiEvironment.equals("local")) {
+            textView.setText("本地");
+        } else if (apiEvironment.equals("pro")) {
+            textView.setText("生产环境");
+        } else if (apiEvironment.equals("dev")) {
+            textView.setText("开发环境");
+        }
     }
 }
