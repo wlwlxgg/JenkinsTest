@@ -2,7 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
-        config {
+        pro {
+            keyAlias 'asiainfo'
+            keyPassword '123456'
+            storeFile file('/Users/wlwlxgg/Documents/Asiainfo/aitribe.jks')
+            storePassword '123456'
+        }
+        dev {
             keyAlias 'asiainfo'
             keyPassword '123456'
             storeFile file('/Users/wlwlxgg/Documents/Asiainfo/aitribe_test.jks')
@@ -16,27 +22,26 @@ android {
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName APP_VERSION
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         pro {
-            buildConfigField "String", "ApiEnvironment", "pro"
+            buildConfigField "String", "API_ENVIRONMENT", PRO_ENVIRONMENT
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.pro
         }
         dev {
-            buildConfigField "String", "ApiEnvironment", "dev"
+            buildConfigField "String", "API_ENVIRONMENT", DEV_ENVIRONMENT
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.dev
         }
-        local {
-            buildConfigField "String", "ApiEnvironment", "local"
+        debug {
+            buildConfigField "String", "API_ENVIRONMENT", LOCAL_ENVIRONMENT
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }
